@@ -1,6 +1,7 @@
 /* globals $:false */
 var width = $(window).width(),
     height = $(window).height(),
+    isMobile = false,
     $root = '/';
 $(function() {
     var app = {
@@ -17,16 +18,12 @@ $(function() {
                         app.loadContent(State.url + '/ajax', slidecontainer);
                     }
                 });
-                //esc
                 $(document).keyup(function(e) {
+                    //esc
                     if (e.keyCode === 27) app.goIndex();
-                });
-                //left
-                $(document).keyup(function(e) {
+                    //left
                     if (e.keyCode === 37 && $slider) app.goPrev($slider);
-                });
-                //right
-                $(document).keyup(function(e) {
+                    //right
                     if (e.keyCode === 39 && $slider) app.goNext($slider);
                 });
                 $(window).load(function() {
@@ -41,6 +38,7 @@ $(function() {
             if (isMobile) {
                 if (width >= 770) {
                     //location.reload();
+                    isMobile = false;
                 }
             }
         },
