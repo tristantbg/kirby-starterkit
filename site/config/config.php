@@ -29,7 +29,10 @@ of the system, please check out http://getkirby.com/docs/advanced/options
 
 */
 
-c::set('oembed.lazyvideo', true);
+c::set('debug', true);
+c::set('plugin.embed.video.lazyload', true);
+c::set('plugin.embed.video.lazyload.btn', 'assets/images/play.png');
+c::set('kirbytext.image.figure', false);
 //Typo
 c::set('typography', false);
 c::set('typography.ordinal.suffix', false);
