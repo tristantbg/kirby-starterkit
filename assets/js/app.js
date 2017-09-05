@@ -9,15 +9,15 @@ $(function() {
             $(window).resize(function(event) {});
             $(document).ready(function($) {
                 $body = $('body');
-                History.Adapter.bind(window, 'statechange', function() {
-                    var State = History.getState();
-                    console.log(State);
-                    var content = State.data;
-                    if (content.type == 'project') {
-                        $body.addClass('project loading');
-                        app.loadContent(State.url + '/ajax', slidecontainer);
-                    }
-                });
+                // History.Adapter.bind(window, 'statechange', function() {
+                //     var State = History.getState();
+                //     console.log(State);
+                //     var content = State.data;
+                //     if (content.type == 'project') {
+                //         $body.addClass('project loading');
+                //         app.loadContent(State.url + '/ajax', slidecontainer);
+                //     }
+                // });
                 $(document).keyup(function(e) {
                     //esc
                     if (e.keyCode === 27) app.goIndex();
@@ -43,9 +43,9 @@ $(function() {
             }
         },
         goIndex: function() {
-            History.pushState({
-                type: 'index'
-            }, $sitetitle, window.location.origin + $root);
+            // History.pushState({
+            //     type: 'index'
+            // }, $sitetitle, window.location.origin + $root);
         },
         loadContent: function(url, target) {
             $.ajax({
